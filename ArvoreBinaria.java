@@ -121,19 +121,34 @@ public class ArvoreBinaria {
     }
 
     public void folhas(No atual) {
-        if(root == null){
-            System.out.println("A arvore esta vazia");
+    	
+        if(!estaVazia()){            
+	        if (atual != null) {
+	            folhas(atual.getEsq());
+	            folhas(atual.getDir());
+	        }
         }
-        if (atual != null) {
-            folhas(atual.getEsq());
-            folhas(atual.getDir());
-
-            if ((atual.getEsq() == null) && (atual.getDir() == null)) {
-                System.out.println(atual.getItem() + " ");
-            }
-
-        }
-
+    }
+    
+    @Override
+    public String toString() {
+    	String string = "folhas ";
+    	if (estaVazia()) {
+    		string = string + " está vazia";  
+    	} else {
+    		if ((atual.getEsq() == null) && (atual.getDir() == null)) {
+    			string = string + " " + atual.getItem();
+	        }
+    	}
+    	return string;
+    }
+    
+    public boolean estaVazia() {
+    	if(root == null) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
 
     public void imprimirFolha() {
