@@ -7,6 +7,7 @@ public class TesteArvore {
         Scanner scanner = new Scanner(System.in);
 
         ArvoreBinaria arv = new ArvoreBinaria();
+        No no = new No();
 
         int opcao;
         long x;
@@ -42,8 +43,8 @@ public class TesteArvore {
                     break;
 
                 case 3:
-                    System.out.println("Folhas: ");
-                    arv.imprimirFolha();
+                    System.out.print("Folhas: ");
+                    
                     break;
 
                 case 4:

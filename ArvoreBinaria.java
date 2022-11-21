@@ -120,21 +120,11 @@ public class ArvoreBinaria {
         return sucessor;
     }
 
-    public void folhas(No atual) {
-        if(root == null){
-            System.out.println("A arvore esta vazia");
-        }
-        if (atual != null) {
-            folhas(atual.getEsq());
-            folhas(atual.getDir());
-
-            if ((atual.getEsq() == null) && (atual.getDir() == null)) {
-                System.out.println(atual.getItem() + " ");
-            }
-
-        }
-
-    }
+    public int folhas(No atual) {
+        if(atual == null) return 0;
+        if(atual.getEsq() == null && atual.getDir() == null) return 1;
+        return folhas(atual.getEsq()) + folhas(atual.getDir());
+      }
 
     public void imprimirFolha() {
         folhas(root);
