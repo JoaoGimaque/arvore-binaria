@@ -120,6 +120,7 @@ public class ArvoreBinaria {
         return sucessor;
     }
 
+<<<<<<< HEAD
     public void folhas(No atual) {
     	
         if(!estaVazia()){            
@@ -150,6 +151,13 @@ public class ArvoreBinaria {
     		return false;
     	}
     }
+=======
+    public int folhas(No atual) {
+        if(atual == null) return 0;
+        if(atual.getEsq() == null && atual.getDir() == null) return 1;
+        return folhas(atual.getEsq()) + folhas(atual.getDir());
+      }
+>>>>>>> fc56985dc7712b2da7481fc62a08e01e573b507e
 
     public void imprimirFolha() {
         folhas(root);
